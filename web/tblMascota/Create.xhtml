@@ -13,7 +13,7 @@
                 <h:panelGroup id="display">
                     <p:panelGrid columns="2" rendered="#{tblMascotaController.selected != null}">
                         <p:outputLabel value="#{bundle.CreateTblMascotaLabel_IDpet}" for="IDpet" />
-                        <p:inputText id="IDpet" value="#{tblMascotaController.selected.IDpet}" title="#{bundle.CreateTblMascotaTitle_IDpet}" required="true" requiredMessage="#{bundle.CreateTblMascotaRequiredMessage_IDpet}"/>
+                        <p:inputText id="IDpet" value="#{tblMascotaController.selected.IDpet}" title="#{bundle.CreateTblMascotaTitle_IDpet}" required="false" disabled="true" requiredMessage="#{bundle.CreateTblMascotaRequiredMessage_IDpet}"/>
                         <p:outputLabel value="#{bundle.CreateTblMascotaLabel_nombrepet}" for="nombrepet" />
                         <p:inputText id="nombrepet" value="#{tblMascotaController.selected.nombrepet}" title="#{bundle.CreateTblMascotaTitle_nombrepet}" />
                         <p:outputLabel value="#{bundle.CreateTblMascotaLabel_razapet}" for="razapet" />

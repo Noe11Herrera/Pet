@@ -13,7 +13,7 @@
                 <h:panelGroup id="display">
                     <p:panelGrid columns="2" rendered="#{tblUsuarioController.selected != null}">
                         <p:outputLabel value="#{bundle.CreateTblUsuarioLabel_IDUsuario}" for="IDUsuario" />
-                        <p:inputText id="IDUsuario" value="#{tblUsuarioController.selected.IDUsuario}" title="#{bundle.CreateTblUsuarioTitle_IDUsuario}" required="true" requiredMessage="#{bundle.CreateTblUsuarioRequiredMessage_IDUsuario}"/>
+                        <p:inputText id="IDUsuario" value="#{tblUsuarioController.selected.IDUsuario}" title="#{bundle.CreateTblUsuarioTitle_IDUsuario}" required="false" disabled="true" requiredMessage="#{bundle.CreateTblUsuarioRequiredMessage_IDUsuario}"/>
                         <p:outputLabel value="#{bundle.CreateTblUsuarioLabel_nombreUsu}" for="nombreUsu" />
                         <p:inputText id="nombreUsu" value="#{tblUsuarioController.selected.nombreUsu}" title="#{bundle.CreateTblUsuarioTitle_nombreUsu}" />
                         <p:outputLabel value="#{bundle.CreateTblUsuarioLabel_apellidoUsu}" for="apellidoUsu" />
