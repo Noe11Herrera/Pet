@@ -22,18 +22,19 @@
                                  rowKey="#{item.IDpet}"
                                  rows="10"
                                  rowsPerPageTemplate="10,20,30,40,50"
+                                                                 
                                  >
 
                         <p:ajax event="rowSelect"   update="createButton viewButton editButton deleteButton"/>
                         <p:ajax event="rowUnselect" update="createButton viewButton editButton deleteButton"/>
 
-                        <p:column>
+                        <p:column >
                             <f:facet name="header">
                                 <h:outputText value="#{bundle.ListTblMascotaTitle_IDpet}"/>
                             </f:facet>
                             <h:outputText value="#{item.IDpet}"/>
                         </p:column>
-                        <p:column>
+                        <p:column filterBy="#{item.nombrepet}" filterMatchMode="contains">
                             <f:facet name="header">
                                 <h:outputText value="#{bundle.ListTblMascotaTitle_nombrepet}"/>
                             </f:facet>
