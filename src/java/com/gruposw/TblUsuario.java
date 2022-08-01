@@ -177,7 +177,7 @@ public class TblUsuario implements Serializable {
 
     @Override
     public String toString() {
-        return "com.gruposw.TblUsuario[ iDUsuario=" + iDUsuario + " ]";
+        return nombreUsu;
     }
     
 }

@@ -188,7 +188,7 @@ public class TblMascota implements Serializable {
 
     @Override
     public String toString() {
-        return "com.gruposw.TblMascota[ iDpet=" + iDpet + " ]";
+        return nombrepet;
     }
     
 }
