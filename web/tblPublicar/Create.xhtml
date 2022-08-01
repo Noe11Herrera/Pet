@@ -13,7 +13,7 @@
                 <h:panelGroup id="display">
                     <p:panelGrid columns="2" rendered="#{tblPublicarController.selected != null}">
                         <p:outputLabel value="#{bundle.CreateTblPublicarLabel_IDPublicar}" for="IDPublicar" />
-                        <p:inputText id="IDPublicar" value="#{tblPublicarController.selected.IDPublicar}" title="#{bundle.CreateTblPublicarTitle_IDPublicar}" required="true" requiredMessage="#{bundle.CreateTblPublicarRequiredMessage_IDPublicar}"/>
+                        <p:inputText id="IDPublicar" value="#{tblPublicarController.selected.IDPublicar}" title="#{bundle.CreateTblPublicarTitle_IDPublicar}" required="false" disabled="true" requiredMessage="#{bundle.CreateTblPublicarRequiredMessage_IDPublicar}"/>
                         <p:outputLabel value="#{bundle.CreateTblPublicarLabel_titulopub}" for="titulopub" />
                         <p:inputText id="titulopub" value="#{tblPublicarController.selected.titulopub}" title="#{bundle.CreateTblPublicarTitle_titulopub}" />
                         <p:outputLabel value="#{bundle.CreateTblPublicarLabel_descripcionpub}" for="descripcionpub" />
