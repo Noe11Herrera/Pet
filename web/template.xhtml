@@ -21,9 +21,9 @@
                     <p:menubar>
                         <p:menuitem value="#{bundle.Home}" outcome="/index" icon="ui-icon-home"/>
                         <p:submenu label="#{bundle.Maintenance}">
-                            <p:menuitem value="TblMascota" outcome="/tblMascota/List.xhtml" />
-                            <p:menuitem value="TblPublicar" outcome="/tblPublicar/List.xhtml" />
-                            <p:menuitem value="TblUsuario" outcome="/tblUsuario/List.xhtml" />
+                            <p:menuitem value="Buscar Mascotas" outcome="/tblMascota/List.xhtml" />
+                            <p:menuitem value="Reportar Mascota" outcome="/tblPublicar/List.xhtml" />
+                            <p:menuitem value="Usuario" outcome="/tblUsuario/List.xhtml" />
                         </p:submenu>
                     </p:menubar>
                 </h:form>
@@ -33,11 +33,21 @@
                 <ui:insert name="footer"/>
             </p:layoutUnit>
 
+                   <p:layoutUnit position="south" size="40" style="text-align: center">
+             
+                     <p:outputLabel value="Powered by UTPL's group of future developers        "></p:outputLabel>
+                        <br></br>
+                      <p:outputLabel value="Ecuador"></p:outputLabel>
+                 
+            </p:layoutUnit>
+           
             <p:layoutUnit position="center">
                 <ui:insert name="body"/>
-            </p:layoutUnit>
+            </p:layoutUnit>     
 
         </p:layout>
+        
+    
 
     </h:body>
 
