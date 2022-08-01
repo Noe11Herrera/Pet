@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition>
+
+        <p:dialog id="TblPublicarCreateDlg" widgetVar="TblPublicarCreateDialog" modal="true" resizable="false" appendTo="@(body)" header="#{bundle.CreateTblPublicarTitle}">
+            <h:form id="TblPublicarCreateForm">
+                <h:panelGroup id="display">
+                    <p:panelGrid columns="2" rendered="#{tblPublicarController.selected != null}">
+                        <p:outputLabel value="#{bundle.CreateTblPublicarLabel_IDPublicar}" for="IDPublicar" />
+                        <p:inputText id="IDPublicar" value="#{tblPublicarController.selected.IDPublicar}" title="#{bundle.CreateTblPublicarTitle_IDPublicar}" required="true" requiredMessage="#{bundle.CreateTblPublicarRequiredMessage_IDPublicar}"/>
+                        <p:outputLabel value="#{bundle.CreateTblPublicarLabel_titulopub}" for="titulopub" />
+                        <p:inputText id="titulopub" value="#{tblPublicarController.selected.titulopub}" title="#{bundle.CreateTblPublicarTitle_titulopub}" />
+                        <p:outputLabel value="#{bundle.CreateTblPublicarLabel_descripcionpub}" for="descripcionpub" />
+                        <p:inputText id="descripcionpub" value="#{tblPublicarController.selected.descripcionpub}" title="#{bundle.CreateTblPublicarTitle_descripcionpub}" />
+                        <p:outputLabel value="#{bundle.CreateTblPublicarLabel_imagenpub}" for="imagenpub" />
+                        <p:inputTextarea rows="4" cols="30" id="imagenpub" value="#{tblPublicarController.selected.imagenpub}" title="#{bundle.CreateTblPublicarTitle_imagenpub}" />
+                        <p:outputLabel value="#{bundle.CreateTblPublicarLabel_fechapub}" for="fechapub" />
+                        <p:calendar id="fechapub" pattern="MM/dd/yyyy HH:mm:ss" value="#{tblPublicarController.selected.fechapub}" title="#{bundle.EditTblPublicarTitle_fechapub}"  showOn="button"/>
+                        <p:outputLabel value="#{bundle.CreateTblPublicarLabel_IDpet}" for="IDpet" />
+                        <p:selectOneMenu id="IDpet" value="#{tblPublicarController.selected.IDpet}" required="true" requiredMessage="#{bundle.EditTblPublicarRequiredMessage_IDpet}">
+                            <f:selectItems value="#{tblMascotaController.itemsAvailableSelectOne}"
+                                           var="IDpetItem"
+                                           itemValue="#{IDpetItem}"/>
+                        </p:selectOneMenu>
+                        <p:outputLabel value="#{bundle.CreateTblPublicarLabel_IDUsuario}" for="IDUsuario" />
+                        <p:selectOneMenu id="IDUsuario" value="#{tblPublicarController.selected.IDUsuario}" required="true" requiredMessage="#{bundle.EditTblPublicarRequiredMessage_IDUsuario}">
+                            <f:selectItems value="#{tblUsuarioController.itemsAvailableSelectOne}"
+                                           var="IDUsuarioItem"
+                                           itemValue="#{IDUsuarioItem}"/>
+                        </p:selectOneMenu>
+                    </p:panelGrid>
+                    <p:commandButton actionListener="#{tblPublicarController.create}" value="#{bundle.Save}" update="display,:TblPublicarListForm:datalist,:growl" oncomplete="handleSubmit(args,'TblPublicarCreateDialog');"/>
+                    <p:commandButton value="#{bundle.Cancel}" onclick="TblPublicarCreateDialog.hide()"/>
+                </h:panelGroup>
+            </h:form>
+        </p:dialog>
+
+    </ui:composition>
+</html>

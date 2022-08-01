@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition>
+
+        <p:dialog id="TblMascotaCreateDlg" widgetVar="TblMascotaCreateDialog" modal="true" resizable="false" appendTo="@(body)" header="#{bundle.CreateTblMascotaTitle}">
+            <h:form id="TblMascotaCreateForm">
+                <h:panelGroup id="display">
+                    <p:panelGrid columns="2" rendered="#{tblMascotaController.selected != null}">
+                        <p:outputLabel value="#{bundle.CreateTblMascotaLabel_IDpet}" for="IDpet" />
+                        <p:inputText id="IDpet" value="#{tblMascotaController.selected.IDpet}" title="#{bundle.CreateTblMascotaTitle_IDpet}" required="true" requiredMessage="#{bundle.CreateTblMascotaRequiredMessage_IDpet}"/>
+                        <p:outputLabel value="#{bundle.CreateTblMascotaLabel_nombrepet}" for="nombrepet" />
+                        <p:inputText id="nombrepet" value="#{tblMascotaController.selected.nombrepet}" title="#{bundle.CreateTblMascotaTitle_nombrepet}" />
+                        <p:outputLabel value="#{bundle.CreateTblMascotaLabel_razapet}" for="razapet" />
+                        <p:inputText id="razapet" value="#{tblMascotaController.selected.razapet}" title="#{bundle.CreateTblMascotaTitle_razapet}" />
+                        <p:outputLabel value="#{bundle.CreateTblMascotaLabel_edadpet}" for="edadpet" />
+                        <p:inputText id="edadpet" value="#{tblMascotaController.selected.edadpet}" title="#{bundle.CreateTblMascotaTitle_edadpet}" />
+                        <p:outputLabel value="#{bundle.CreateTblMascotaLabel_tamanopet}" for="tamanopet" />
+                        <p:inputText id="tamanopet" value="#{tblMascotaController.selected.tamanopet}" title="#{bundle.CreateTblMascotaTitle_tamanopet}" />
+                        <p:outputLabel value="#{bundle.CreateTblMascotaLabel_descripcionpet}" for="descripcionpet" />
+                        <p:inputText id="descripcionpet" value="#{tblMascotaController.selected.descripcionpet}" title="#{bundle.CreateTblMascotaTitle_descripcionpet}" />
+                        <p:outputLabel value="#{bundle.CreateTblMascotaLabel_ubicacionpet}" for="ubicacionpet" />
+                        <p:inputText id="ubicacionpet" value="#{tblMascotaController.selected.ubicacionpet}" title="#{bundle.CreateTblMascotaTitle_ubicacionpet}" />
+                        <p:outputLabel value="#{bundle.CreateTblMascotaLabel_tiopopet}" for="tiopopet" />
+                        <p:inputText id="tiopopet" value="#{tblMascotaController.selected.tiopopet}" title="#{bundle.CreateTblMascotaTitle_tiopopet}" />
+                        <p:outputLabel value="#{bundle.CreateTblMascotaLabel_fechaRegpet}" for="fechaRegpet" />
+                        <p:calendar id="fechaRegpet" pattern="MM/dd/yyyy HH:mm:ss" value="#{tblMascotaController.selected.fechaRegpet}" title="#{bundle.EditTblMascotaTitle_fechaRegpet}"  showOn="button"/>
+                    </p:panelGrid>
+                    <p:commandButton actionListener="#{tblMascotaController.create}" value="#{bundle.Save}" update="display,:TblMascotaListForm:datalist,:growl" oncomplete="handleSubmit(args,'TblMascotaCreateDialog');"/>
+                    <p:commandButton value="#{bundle.Cancel}" onclick="TblMascotaCreateDialog.hide()"/>
+                </h:panelGroup>
+            </h:form>
+        </p:dialog>
+
+    </ui:composition>
+</html>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition>
+
+        <p:dialog id="TblUsuarioCreateDlg" widgetVar="TblUsuarioCreateDialog" modal="true" resizable="false" appendTo="@(body)" header="#{bundle.CreateTblUsuarioTitle}">
+            <h:form id="TblUsuarioCreateForm">
+                <h:panelGroup id="display">
+                    <p:panelGrid columns="2" rendered="#{tblUsuarioController.selected != null}">
+                        <p:outputLabel value="#{bundle.CreateTblUsuarioLabel_IDUsuario}" for="IDUsuario" />
+                        <p:inputText id="IDUsuario" value="#{tblUsuarioController.selected.IDUsuario}" title="#{bundle.CreateTblUsuarioTitle_IDUsuario}" required="true" requiredMessage="#{bundle.CreateTblUsuarioRequiredMessage_IDUsuario}"/>
+                        <p:outputLabel value="#{bundle.CreateTblUsuarioLabel_nombreUsu}" for="nombreUsu" />
+                        <p:inputText id="nombreUsu" value="#{tblUsuarioController.selected.nombreUsu}" title="#{bundle.CreateTblUsuarioTitle_nombreUsu}" />
+                        <p:outputLabel value="#{bundle.CreateTblUsuarioLabel_apellidoUsu}" for="apellidoUsu" />
+                        <p:inputText id="apellidoUsu" value="#{tblUsuarioController.selected.apellidoUsu}" title="#{bundle.CreateTblUsuarioTitle_apellidoUsu}" />
+                        <p:outputLabel value="#{bundle.CreateTblUsuarioLabel_CIUsu}" for="CIUsu" />
+                        <p:inputText id="CIUsu" value="#{tblUsuarioController.selected.CIUsu}" title="#{bundle.CreateTblUsuarioTitle_CIUsu}" />
+                        <p:outputLabel value="#{bundle.CreateTblUsuarioLabel_telefonoUsu}" for="telefonoUsu" />
+                        <p:inputText id="telefonoUsu" value="#{tblUsuarioController.selected.telefonoUsu}" title="#{bundle.CreateTblUsuarioTitle_telefonoUsu}" />
+                        <p:outputLabel value="#{bundle.CreateTblUsuarioLabel_direccionUsu}" for="direccionUsu" />
+                        <p:inputText id="direccionUsu" value="#{tblUsuarioController.selected.direccionUsu}" title="#{bundle.CreateTblUsuarioTitle_direccionUsu}" />
+                        <p:outputLabel value="#{bundle.CreateTblUsuarioLabel_correoUsu}" for="correoUsu" />
+                        <p:inputText id="correoUsu" value="#{tblUsuarioController.selected.correoUsu}" title="#{bundle.CreateTblUsuarioTitle_correoUsu}" />
+                        <p:outputLabel value="#{bundle.CreateTblUsuarioLabel_fechaRegUsu}" for="fechaRegUsu" />
+                        <p:calendar id="fechaRegUsu" pattern="MM/dd/yyyy HH:mm:ss" value="#{tblUsuarioController.selected.fechaRegUsu}" title="#{bundle.EditTblUsuarioTitle_fechaRegUsu}"  showOn="button"/>
+                    </p:panelGrid>
+                    <p:commandButton actionListener="#{tblUsuarioController.create}" value="#{bundle.Save}" update="display,:TblUsuarioListForm:datalist,:growl" oncomplete="handleSubmit(args,'TblUsuarioCreateDialog');"/>
+                    <p:commandButton value="#{bundle.Cancel}" onclick="TblUsuarioCreateDialog.hide()"/>
+                </h:panelGroup>
+            </h:form>
+        </p:dialog>
+
+    </ui:composition>
+</html>

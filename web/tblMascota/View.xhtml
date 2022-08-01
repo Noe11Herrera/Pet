@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition>
+
+        <p:dialog id="TblMascotaViewDlg" widgetVar="TblMascotaViewDialog" modal="true" resizable="false" appendTo="@(body)" header="#{bundle.ViewTblMascotaTitle}">
+            <h:form id="TblMascotaViewForm">
+                <h:panelGroup id="display">
+                    <p:panelGrid columns="2" rendered="#{tblMascotaController.selected != null}">
+                        <h:outputText value="#{bundle.ViewTblMascotaLabel_IDpet}"/>
+                        <h:outputText value="#{tblMascotaController.selected.IDpet}" title="#{bundle.ViewTblMascotaTitle_IDpet}"/>
+                        <h:outputText value="#{bundle.ViewTblMascotaLabel_nombrepet}"/>
+                        <h:outputText value="#{tblMascotaController.selected.nombrepet}" title="#{bundle.ViewTblMascotaTitle_nombrepet}"/>
+                        <h:outputText value="#{bundle.ViewTblMascotaLabel_razapet}"/>
+                        <h:outputText value="#{tblMascotaController.selected.razapet}" title="#{bundle.ViewTblMascotaTitle_razapet}"/>
+                        <h:outputText value="#{bundle.ViewTblMascotaLabel_edadpet}"/>
+                        <h:outputText value="#{tblMascotaController.selected.edadpet}" title="#{bundle.ViewTblMascotaTitle_edadpet}"/>
+                        <h:outputText value="#{bundle.ViewTblMascotaLabel_tamanopet}"/>
+                        <h:outputText value="#{tblMascotaController.selected.tamanopet}" title="#{bundle.ViewTblMascotaTitle_tamanopet}"/>
+                        <h:outputText value="#{bundle.ViewTblMascotaLabel_descripcionpet}"/>
+                        <h:outputText value="#{tblMascotaController.selected.descripcionpet}" title="#{bundle.ViewTblMascotaTitle_descripcionpet}"/>
+                        <h:outputText value="#{bundle.ViewTblMascotaLabel_ubicacionpet}"/>
+                        <h:outputText value="#{tblMascotaController.selected.ubicacionpet}" title="#{bundle.ViewTblMascotaTitle_ubicacionpet}"/>
+                        <h:outputText value="#{bundle.ViewTblMascotaLabel_tiopopet}"/>
+                        <h:outputText value="#{tblMascotaController.selected.tiopopet}" title="#{bundle.ViewTblMascotaTitle_tiopopet}"/>
+                        <h:outputText value="#{bundle.ViewTblMascotaLabel_fechaRegpet}"/>
+                        <h:outputText value="#{tblMascotaController.selected.fechaRegpet}" title="#{bundle.ViewTblMascotaTitle_fechaRegpet}">
+                            <f:convertDateTime pattern="MM/dd/yyyy HH:mm:ss" />
+                        </h:outputText>
+                    </p:panelGrid>
+                    <p:commandButton value="#{bundle.Close}" onclick="TblMascotaViewDialog.hide()"/>
+                </h:panelGroup>
+            </h:form>
+        </p:dialog>
+
+    </ui:composition>
+</html>

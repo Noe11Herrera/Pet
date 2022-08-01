@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition>
+
+        <p:dialog id="TblPublicarViewDlg" widgetVar="TblPublicarViewDialog" modal="true" resizable="false" appendTo="@(body)" header="#{bundle.ViewTblPublicarTitle}">
+            <h:form id="TblPublicarViewForm">
+                <h:panelGroup id="display">
+                    <p:panelGrid columns="2" rendered="#{tblPublicarController.selected != null}">
+                        <h:outputText value="#{bundle.ViewTblPublicarLabel_IDPublicar}"/>
+                        <h:outputText value="#{tblPublicarController.selected.IDPublicar}" title="#{bundle.ViewTblPublicarTitle_IDPublicar}"/>
+                        <h:outputText value="#{bundle.ViewTblPublicarLabel_titulopub}"/>
+                        <h:outputText value="#{tblPublicarController.selected.titulopub}" title="#{bundle.ViewTblPublicarTitle_titulopub}"/>
+                        <h:outputText value="#{bundle.ViewTblPublicarLabel_descripcionpub}"/>
+                        <h:outputText value="#{tblPublicarController.selected.descripcionpub}" title="#{bundle.ViewTblPublicarTitle_descripcionpub}"/>
+                        <h:outputText value="#{bundle.ViewTblPublicarLabel_imagenpub}"/>
+                        <h:outputText value="#{tblPublicarController.selected.imagenpub}" title="#{bundle.ViewTblPublicarTitle_imagenpub}"/>
+                        <h:outputText value="#{bundle.ViewTblPublicarLabel_fechapub}"/>
+                        <h:outputText value="#{tblPublicarController.selected.fechapub}" title="#{bundle.ViewTblPublicarTitle_fechapub}">
+                            <f:convertDateTime pattern="MM/dd/yyyy HH:mm:ss" />
+                        </h:outputText>
+                        <h:outputText value="#{bundle.ViewTblPublicarLabel_IDpet}"/>
+                        <h:outputText value="#{tblPublicarController.selected.IDpet}" title="#{bundle.ViewTblPublicarTitle_IDpet}"/>
+                        <h:outputText value="#{bundle.ViewTblPublicarLabel_IDUsuario}"/>
+                        <h:outputText value="#{tblPublicarController.selected.IDUsuario}" title="#{bundle.ViewTblPublicarTitle_IDUsuario}"/>
+                    </p:panelGrid>
+                    <p:commandButton value="#{bundle.Close}" onclick="TblPublicarViewDialog.hide()"/>
+                </h:panelGroup>
+            </h:form>
+        </p:dialog>
+
+    </ui:composition>
+</html>
